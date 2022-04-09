@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+     <html>
+       <head>
+       <meta charset="utf-8">
+       <title>Vue.js App</title>
+       </head>
+       <body>
+       <div id="app">
+         {{mensaje}} <!--Despliega la variable mensaje -->
+       </div>
+       <script src="js/vue.min.js"></script>
+       <script type="text/javascript">
+         const app = new Vue({
+           el: '#app',  // Haz tu magia en el elemento con id=app
+           data: {
+             mensaje: 'Hola, mundo!' //Variable mensaje
+           }
+          });
+       </script>
+       </body>
+     </html>

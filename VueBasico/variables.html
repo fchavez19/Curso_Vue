@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+     <html>
+       <head>
+       <meta charset="utf-8">
+       <title>Vue.js App</title>
+       </head>
+       <body>
+       <div id="app">
+         {{mensaje}}
+       </div>
+       <script src="js/vue.min.js"></script>
+       <script type="text/javascript">
+         const app = new Vue({
+           el: '#app',
+           data: {
+             mensaje: 'Hola, mundo!',
+	     valor : 19,
+             arreglito: [1,2,3]
+           }
+          });
+       </script>
+       </body>
+     </html>

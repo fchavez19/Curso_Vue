@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+     <html>
+       <head>
+       <meta charset="utf-8">
+       <title>Vue.js App</title>
+       </head>
+       <body>
+       <div id="app">
+	  <h1>{{this.articuloMinusculas}}</h1>
+          <ul>
+            <li>Precio: {{precio}}</li>
+            <li>Detalles: {{detalles}} </li>
+          </ul>
+       </div>
+       <script src="js/vue.min.js"></script>
+       <script type="text/javascript">
+           // JS Code here
+	   const app = new Vue({
+	      el: '#app',
+	      data: {
+                articulo: 'comPutAdora',
+		precio: 5000 * 1.16,
+		detalles: ['8 GB RAM','2 TB DD','Core 7'] 
+	      },
+	      computed: {
+		articuloMinusculas(){
+		  return this.articulo.toLowerCase();
+		},
+	      }
+	   });
+       </script>
+       </body>
+     </html>

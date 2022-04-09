@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+     <html>
+       <head>
+       <meta charset="utf-8">
+       <title>Vue.js App</title>
+       </head>
+       <body>
+       <div id="app">
+	 <p> {{articulo1}}</p><p>{{costo_1}}</p>
+	 <p> {{articulo2}}</p><p>{{costo_2}}</p>
+       </div>
+       <script src="js/vue.min.js"></script>
+       <script type="text/javascript">
+           // JS Code here
+	   const app = new Vue({
+	      el: '#app',
+	      data: {
+                articulo1: 'COMPUTADORA',
+                articulo2: 'AUDIFONOS',
+		precio_art1: 20000,
+		precio_art2: 4000,
+		moneda: '$',
+		impuesto: 16
+	      },
+	      computed: {
+		costo_1(){
+		  let costoDelCoso = parseFloat(Math.round((this.impuesto / 100) *this.precio_art1) + this.precio_art1).toFixed(2);
+                  let salida = 'Este artículo cuesta ' + this.moneda + costoDelCoso; 
+                  salida += ' (' + this.moneda + this.precio_art1 + ' antes del IVA)';
+                  return salida;
+		},
+		costo_2(){
+		  let costoDelCoso = parseFloat(Math.round((this.impuesto / 100) *this.precio_art2) + this.precio_art2).toFixed(2);
+                  let salida = 'Este artículo cuesta ' + this.moneda + costoDelCoso; 
+                  salida += ' (' + this.moneda + this.precio_art2 + ' antes del IVA)';
+                  return salida;
+		}
+	      }
+	   });
+       </script>
+       </body>
+     </html>
